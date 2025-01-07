@@ -1,21 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>My first Vue page</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My First Vue Page</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  <h1>Example with JavaScript inside {{ }}</h1>
+  <p>The 'message' text from the Vue instance is put together with another text and a JavaScript expression. The JavaScript expression creates a random integer between 1 and 6.</p>
 
-<h1>Example with JavaScript inside {{ }}</h1>
+  <div id="app">
+    {{ message }} <br>
+    {{ 'Random number: ' + Math.ceil(Math.random() * 6) }}
+  </div>
 
-<p>The 'message' text from the Vue instance is put together with another text and a JavaScript expression. The JavaScript expression creates a random integer between 1 and 6.</p>
-
-<div id="app">
-  {{ message }} <br>
-  {{'Random number: ' + Math.ceil(Math.random()*6) }}
-</div>
-
-<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-<script src="js/vue.js"></script>
+  <!-- Include Vue -->
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <!-- Your Vue Initialization Script -->
+  <script src="js/vue.js"></script>
 </body>
 </html>
