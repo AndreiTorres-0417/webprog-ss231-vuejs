@@ -9,8 +9,8 @@
 <body>
   <header>
     <h1>Personal Profile Web Page</h1>
-</header>
-<main>
+  </header>
+  <main>
     <section class="javascript-demo">
         <h2>Demo JavaScript in Body</h2>
         <p>The text in the first paragraph (index 0) is: <span id="demo-output">About Me</span></p>
@@ -51,5 +51,21 @@
         <img src="photos/WithDex.jpg" alt="With Dex">
         <img src="photos/WithTheBoyz.jpg" alt="With the Boyz">
     </section>
+    <section class="vue-demo">
+        <h2>Vue Demo</h2>
+        <div id="app">{{ message }}</div>
+    </section>
+  </main>
+  <script src="https://unpkg.com/vue@3"></script>
+  <script>
+    const app = Vue.createApp({
+        data() {
+          return {
+            message: "Hello from Vue!"
+          };
+        }
+    });
+    app.mount('#app');
+  </script>
 </body>
 </html>
