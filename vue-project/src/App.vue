@@ -1,20 +1,21 @@
 <template>
-  <h1>Food</h1>
-  <food-item/>
-  <food-item/>
-  <food-item/>
+  <div id="app">
+    <h1>Food</h1>
+    <food-item />
+    <food-item />
+    <food-item />
+  </div>
 </template>
 
-<script></script>
+<script>
+import FoodItem from './components/FoodItem.vue';
+
+export default {
+  components: {
+    FoodItem
+  }
+};
+</script>
 
 <style>
-  #app > div {
-    border: dashed black 1px;
-    display: inline-block;
-    margin: 10px;
-    padding: 10px;
-    background-color: lightgreen;
-  }
 </style>
-
-
