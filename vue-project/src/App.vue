@@ -1,9 +1,9 @@
 <template>
   <h1>Food</h1>
   <food-item/> <br>
-  <food2-item/> <br>
+  <food-item2/> <br>
   <food-item/> <br>
-  <food2-item/> <br>
+  <food-item2/> <br>
 </template>
 
 <script></script>
