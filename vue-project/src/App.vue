@@ -1,22 +1,21 @@
-<template>
-  <div>
-    <h1>Food</h1>
-    <food-item/>
-    <food-item2/>
-    <food-item/>
-    <food-item2/>
+<script setup>
+  import { ref, onMounted } from 'vue'
+  import { supabase } from './lib/supabaseClient'
 
-    <h1>Personal Profile</h1>
-    <personal-profile/>
-  </div>
-</template>
+  const countries = ref([])
 
-<script>
-export default {
-  name: 'App'
-};
-</script>
+  async function getCountries() {
+    const { data } = await supabase.from('countries').select()
+    countries.value = data
+  }
 
-<style>
-/* Add any global styles here if needed */
-</style>
+  onMounted(() => {
+    getCountries()
+  })
+  </script>
+
+  <template>
+    <ul>
+      <li v-for="country in countries" :key="country.id">{{ country.name }}</li>
+    </ul>
+  </template>
